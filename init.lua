@@ -47,3 +47,7 @@ core.register_craft({
         {"", "default:stick", ""},
     }
 })
+
+lucky_block:add_blocks({
+	{"dro", {"myblueprint:chalk"}, 1},
+})
