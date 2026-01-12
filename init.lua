@@ -48,6 +48,8 @@ core.register_craft({
     }
 })
 
-lucky_block:add_blocks({
-	{"dro", {"myblueprint:chalk"}, 1},
-})
+if core.get_modpath("lucky_block") then
+	lucky_block:add_blocks({
+		{"dro", {"myblueprint:chalk"}, 1},
+	})
+end
