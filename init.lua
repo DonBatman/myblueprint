@@ -21,7 +21,6 @@ core.register_tool("myblueprint:chalk", {
         local pos = core.get_pointed_thing_position(pointed_thing, true)
         local user_name = user:get_player_name()
 
-        -- 1. PROTECTION CHECK (Placement)
         if core.is_protected(pos, user_name) then
             core.record_protection_violation(pos, user_name)
             core.chat_send_player(user_name, "This area is protected!")
@@ -46,8 +45,6 @@ core.register_tool("myblueprint:chalk", {
         
         local cleared_count = 0
         for _, p in ipairs(nodes) do
-            -- 2. PROTECTION CHECK (Clearing)
-            -- We only remove the node if the player has permission for that specific spot
             if not core.is_protected(p, user_name) then
                 core.remove_node(p)
                 cleared_count = cleared_count + 1
